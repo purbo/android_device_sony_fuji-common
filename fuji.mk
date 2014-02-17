@@ -238,9 +238,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #### Goo Manager support
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=RaymanFX \
+    ro.goo.developerid=deedwar \
     ro.goo.board=$(subst full_,,$(TARGET_PRODUCT)) \
-    ro.goo.rom=opensemc_cm \
+    ro.goo.rom=paranoid_android \
     ro.goo.version=$(shell date +%s)
 
 # QCOM
