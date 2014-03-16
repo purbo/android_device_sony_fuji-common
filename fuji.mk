@@ -199,7 +199,7 @@ PRODUCT_COPY_FILES += \
 
 # Boot Logo
 PRODUCT_COPY_FILES += \
-     device/sony/fuji-common/bootlogo/OpenSEMC2.rle:root/logo.rle
+     device/sony/fuji-common/bootlogo/sony.rle:root/logo.rle
 
 # Extract recovery ramdisks
 PRODUCT_PACKAGES += \
@@ -209,10 +209,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/sony/fuji-common/rootdir/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     device/sony/fuji-common/rootdir/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -238,7 +234,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #### Goo Manager support
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=RaymanFX \
+    ro.goo.developerid=deedwar \
     ro.goo.board=$(subst full_,,$(TARGET_PRODUCT)) \
     ro.goo.rom=opensemc_cm \
     ro.goo.version=$(shell date +%s)
@@ -264,7 +260,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     persist.hwc.mdpcomp.enable=true \
     debug.composition.type=dyn \
-    debug.mdpcomp.maxlayer=3 \
+    debug.mdpcomp.maxlayer=2 \
     debug.mdpcomp.logs=0 \
     debug.egl.recordable.rgba8888=1
 
