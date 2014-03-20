@@ -149,7 +149,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     e2fsck \
-    setup_fs
+    setup_fs \
+	mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -160,7 +163,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_COPY_FILES += \
     device/sony/fuji-common/rootdir/init.semc.rc:root/init.semc.rc \
     device/sony/fuji-common/rootdir/system/etc/init.fixbt.sh:system/etc/init.fixbt.sh \
-    device/sony/fuji-common/rootdir/ueventd.semc.rc:root/ueventd.semc.rc
+    device/sony/fuji-common/rootdir/ueventd.semc.rc:root/ueventd.semc.rc \
+    device/sony/fuji-common/rootdir/system/etc/init.recovery.semc.rc:system/etc/init.recovery.semc.rc \
+
 
 # Audio policy config
 PRODUCT_COPY_FILES += \
@@ -199,7 +204,7 @@ PRODUCT_COPY_FILES += \
 
 # Boot Logo
 PRODUCT_COPY_FILES += \
-     device/sony/fuji-common/bootlogo/OpenSEMC2.rle:root/logo.rle
+     device/sony/fuji-common/bootlogo/sony.rle:root/logo.rle
 
 # Extract recovery ramdisks
 PRODUCT_PACKAGES += \
@@ -209,10 +214,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/sony/fuji-common/rootdir/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     device/sony/fuji-common/rootdir/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -240,7 +241,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=deedwar \
     ro.goo.board=$(subst full_,,$(TARGET_PRODUCT)) \
-    ro.goo.rom=paranoid_android \
+    ro.goo.rom=beanstalk \
     ro.goo.version=$(shell date +%s)
 
 # QCOM
@@ -288,3 +289,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include non-opensource parts if available
 $(call inherit-product-if-exists, vendor/sony/fuji-common-caf/fuji-common-vendor.mk)
+
+#Apollo Music Player
+PRODUCT_PACKAGES += Apollo
