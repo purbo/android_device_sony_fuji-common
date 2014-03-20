@@ -241,7 +241,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=deedwar \
     ro.goo.board=$(subst full_,,$(TARGET_PRODUCT)) \
-    ro.goo.rom=beanstalk \
+    ro.goo.rom=paranoid \
     ro.goo.version=$(shell date +%s)
 
 # QCOM
@@ -289,6 +289,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include non-opensource parts if available
 $(call inherit-product-if-exists, vendor/sony/fuji-common-caf/fuji-common-vendor.mk)
-
-#Apollo Music Player
-PRODUCT_PACKAGES += Apollo
