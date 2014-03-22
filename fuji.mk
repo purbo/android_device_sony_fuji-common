@@ -239,6 +239,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.rom=opensemc_cm \
     ro.goo.version=$(shell date +%s)
 
+#USB
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp,adb
+    
+
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
     com.qc.hardware=true
