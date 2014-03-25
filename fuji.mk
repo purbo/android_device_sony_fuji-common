@@ -256,17 +256,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.hw=1 \
     debug.egl.hw=1 \
+    debug.sf.hw=1 \
     persist.hwc.mdpcomp.enable=true \
+    debug.composition.type=dyn \
+    debug.mdpcomp.maxlayer=3 \
     debug.mdpcomp.logs=0 \
     debug.egl.recordable.rgba8888=1
+
 #MR2
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bq.gpu_to_cpu_unsupported=1
 
 # More display props - double check these!
 PRODUCT_PROPERTY_OVERRIDES += \
+    dev.pm.dyn_samplingrate=1 \
     debug.hwc.dynThreshold=1.9
 
 # Low Power Audio Decoding
