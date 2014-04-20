@@ -60,6 +60,7 @@ PRODUCT_PACKAGES += \
     copybit.msm8660 \
     gralloc.msm8660 \
     hwcomposer.msm8660 \
+    memtrack.msm8660 \
     libgenlock \
     libmemalloc \
     liboverlay \
@@ -108,6 +109,10 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libaudioutils
     #audio_policy.conf
+
+# Camera wrapper
+#PRODUCT_PACKAGES += \
+#    camera.fuji
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -231,12 +236,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.transmitpower=true
 
 
-#USB
+# USB Debugging
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.debuggable=1 \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=mtp,adb
+
     
 
 # QCOM
