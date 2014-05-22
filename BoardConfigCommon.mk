@@ -127,6 +127,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Legacy define
 TARGET_PROVIDES_LIBLIGHTS := true
 
+# Power HAL
+TARGET_USES_CM_POWERHAL := true
+
 # CM Hardware Class
 BOARD_HARDWARE_CLASS := hardware/sony/cmhw
 
